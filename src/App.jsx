@@ -6,15 +6,12 @@ import './App.css'
 const App=() => {
   const [count, setCount] = useState(0)
 
-  // function myFunction(){
-  //   console.log(">>> run my function")
-  // }
-  
-
-  const myFunction =() =>{
-    console.log(">>> run my arrow function")
+  const MyComponent = () => {
+    return(
+      <div>Hung @ react</div>
+    );
   }
-  myFunction();
+
 
   return (
     <>
@@ -31,6 +28,7 @@ const App=() => {
         <button onClick={() => setCount((count) => count + 1)}>
           count is {count}
         </button>
+        <MyComponent/>
         <p>
           Edit <code>src/App.jsx</code> and save to test HMR
         </p>
