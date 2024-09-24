@@ -2,6 +2,7 @@ import './components/todo/todo.css'
 import TodoData from './components/todo/TodoData';
 import TodoNew from './components/todo/TodoNew';
 import reactLogo from './assets/react.svg'
+import { useState } from 'react';
 
 const App = () => {
   const name ="hung";
@@ -14,6 +15,13 @@ const App = () => {
   const addNewTodo = (name) => {
     alert(`call me ${name}`)
   }
+
+  // eslint-disable-next-line no-unused-vars
+  const [TodoList, setTodoList] = useState([
+    { id: 1, name: "Learning React " },
+    { id: 2, name: "Watching Youtube" }
+
+  ])
   // addNewTodo();
 
   return (
@@ -26,7 +34,7 @@ const App = () => {
       name = {name}
       age = {age}
       data = {data}
-      
+      TodoList= {TodoList}
       />
       <div className='todo-image'>
         <img src={reactLogo} className='logo' />

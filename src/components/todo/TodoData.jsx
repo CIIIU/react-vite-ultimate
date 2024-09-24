@@ -1,3 +1,4 @@
+/* eslint-disable react/prop-types */
 const TodoData = (props) => {
     // console.log("props: ", props)
 
@@ -12,6 +13,9 @@ const TodoData = (props) => {
         <div>My name is  {name}</div>
         <div>Learning</div>
         <div>Watching</div>
+        <div>
+          {JSON.stringify(props.TodoList)}
+        </div>
       </div>
     )
     
