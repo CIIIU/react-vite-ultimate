@@ -1,3 +1,4 @@
+/* eslint-disable no-undef */
 import './components/todo/todo.css'
 import TodoData from './components/todo/TodoData';
 import TodoNew from './components/todo/TodoNew';
@@ -12,17 +13,22 @@ const App = () => {
     country: "Viet Nam"
   }
 
-  const addNewTodo = (name) => {
-    alert(`call me ${name}`)
-  }
-
-  // eslint-disable-next-line no-unused-vars
-  const [TodoList, setTodoList] = useState([
+  const [todoList, setTodoList] = useState([
     { id: 1, name: "Learning React " },
     { id: 2, name: "Watching Youtube" }
-
   ])
-  // addNewTodo();
+
+  const addNewTodo = (name) => {
+    const newTodo ={
+      id : randomIntFromInterval(1, 1000000),
+      name: name
+    }
+    setTodoList([...todoList, newTodo])
+  }
+
+  const randomIntFromInterval = (min, max) => { // min and max included 
+    return Math.floor(Math.random() * (max - min + 1) + min);
+  }
 
   return (
     <div className="todo-container">
@@ -34,7 +40,7 @@ const App = () => {
       name = {name}
       age = {age}
       data = {data}
-      TodoList= {TodoList}
+      TodoList= {todoList}
       />
       <div className='todo-image'>
         <img src={reactLogo} className='logo' />

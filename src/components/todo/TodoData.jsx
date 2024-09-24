@@ -1,11 +1,9 @@
 /* eslint-disable react/prop-types */
 const TodoData = (props) => {
-    // console.log("props: ", props)
 
     // const name = props.name;
     // const age = props.age;
     // const data = props.data;
-
     // eslint-disable-next-line react/prop-types, no-unused-vars
     const {name ,age , data} = props
     return (

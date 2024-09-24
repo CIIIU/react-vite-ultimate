@@ -1,20 +1,21 @@
+
 import { useState } from "react"
 
-// eslint-disable-next-line no-unused-vars
 const TodoNew = (props) => {
-    // console.log(">>>check point : ", props)
-    //  addNewTodo("hung dep trai")
+    
+    // eslint-disable-next-line react/prop-types
+    const {addNewTodo} = props
     const handleClick = () => {
         console.log("input text is : ", valueInput)
+        addNewTodo(valueInput)
       }
 
-    // const valueInput = "hung";
-    const [valueInput,setValueInput] = useState("hugn")
-
+    const [valueInput,setValueInput] = useState("")
 
     const handleOnChange = (name) => {
         setValueInput(name)
     }
+    
     return (
         <div className='todo-new'>
         <input type="text" 
