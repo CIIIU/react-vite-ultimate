@@ -4,6 +4,8 @@ import TodoData from "./components/todo/TodoData";
 import TodoNew from "./components/todo/TodoNew";
 import reactLogo from "./assets/react.svg";
 import { useState } from "react";
+import Header from "./components/header/header";
+import Footer from "./components/footer/footer";
 
 const App = () => {
   const [todoList, setTodoList] = useState([
@@ -30,6 +32,8 @@ const App = () => {
   };
 
   return (
+    <>
+    <Header/>
     <div className="todo-container">
       <div className="todo-title">Todo List</div>
       <TodoNew addNewTodo={addNewTodo} />
@@ -45,6 +49,8 @@ const App = () => {
         </div>
       }
     </div>
+    <Footer/>
+    </>
   );
 };
 
