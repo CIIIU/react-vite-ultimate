@@ -40,7 +40,7 @@ const App = () => {
       name = {name}
       age = {age}
       data = {data}
-      TodoList= {todoList}
+      todoList= {todoList}
       />
       <div className='todo-image'>
         <img src={reactLogo} className='logo' />

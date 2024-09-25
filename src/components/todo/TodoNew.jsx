@@ -1,36 +1,31 @@
-
-import { useState } from "react"
+import { useState } from "react";
 
 const TodoNew = (props) => {
-    
-    // eslint-disable-next-line react/prop-types
-    const {addNewTodo} = props
-    const handleClick = () => {
-        console.log("input text is : ", valueInput)
-        addNewTodo(valueInput)
-      }
+  // eslint-disable-next-line react/prop-types
+  const { addNewTodo } = props;
+  const handleClick = () => {
+    addNewTodo(valueInput);
+    setValueInput("");
+  };
 
-    const [valueInput,setValueInput] = useState("")
+  const [valueInput, setValueInput] = useState("");
 
-    const handleOnChange = (name) => {
-        setValueInput(name)
-    }
-    
-    return (
-        <div className='todo-new'>
-        <input type="text" 
-        onChange={(event)=> {handleOnChange(event.target.value)}}
-        />
-        <button
-        style={{cursor: "pointer"}}
-        onClick={handleClick}
-        >ADD</button>
-        <div>
-            This input text is : {valueInput}
-        </div>
-      </div>
-    )
-    
-}
+  const handleOnChange = (name) => {
+    setValueInput(name);
+  };
 
-export default TodoNew
+  return (
+    <div className="todo-new">
+      <input
+        type="text"
+        onChange={(event) => handleOnChange(event.target.value)}
+        value={valueInput}
+      />
+      <button style={{ cursor: "pointer" }} onClick={handleClick}>
+        ADD
+      </button>
+    </div>
+  );
+};
+
+export default TodoNew;
