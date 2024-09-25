@@ -24,18 +24,26 @@ const App = () => {
     return Math.floor(Math.random() * (max - min + 1) + min);
   };
 
+  const deleteTodo = (idSelected) => {
+    const resultList = todoList.filter((item) => item.id !== idSelected);
+    setTodoList(resultList);
+  };
+
   return (
     <div className="todo-container">
       <div className="todo-title">Todo List</div>
       <TodoNew addNewTodo={addNewTodo} />
-    
-    {todoList.length > 0 ?
-      <TodoData todoList={todoList} />
-      :
-      <div className="todo-image">
-        <img src={reactLogo} className="logo" />
-      </div>
-    }
+
+      {todoList.length > 0 ? 
+        <TodoData 
+        todoList={todoList} 
+        deleteTodo={deleteTodo}
+        />
+       : 
+        <div className="todo-image">
+          <img src={reactLogo} className="logo" />
+        </div>
+      }
     </div>
   );
 };
